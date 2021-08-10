@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Midstart">
-        <activity android:name=".CardNews1"></activity>
+        <activity android:name=".CESActivity"></activity>
+        <activity android:name=".CardNews1" />
         <activity android:name=".CardNewsActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
