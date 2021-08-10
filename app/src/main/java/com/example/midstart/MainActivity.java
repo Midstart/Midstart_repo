@@ -3,6 +3,11 @@ package com.example.midstart;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -14,10 +19,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
     private FirebaseAuth mFirebaseAuth; //파이어베이스 인증
     private DatabaseReference mDatabaseRef;  //실시간 데이터베이스
+
+    private SensorManager sensorManager;
+    private Sensor sensor;
+    private boolean isSensor;   // 센서 사용 가능한지
+    private TextView stepSinceReboot;   // 걸음수
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,5 +57,49 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        stepSinceReboot = (TextView) findViewById(R.id.totalSteps);
+        sensorManager = (SensorManager) this.getSystemService(Context.SENSOR_SERVICE);
+        if(sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)!=null){
+            sensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
+            isSensor = true;
+        }
+        else{
+            isSensor = false;
+        }
+
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(isSensor){
+            sensorManager.registerListener(this,sensor,SensorManager.SENSOR_DELAY_NORMAL);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(isSensor){
+            sensorManager.unregisterListener(this);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        sensorManager = null;
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        stepSinceReboot.setText("STEPS: "+String.valueOf((int)event.values[0]));
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+
+
 }
