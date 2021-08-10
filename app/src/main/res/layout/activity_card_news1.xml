@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="#FFFFFF"
     tools:context=".CardNews1">
 
     <com.smarteist.autoimageslider.SliderView
@@ -21,7 +22,7 @@
         app:sliderIndicatorOrientation="horizontal"
         app:sliderIndicatorPadding="3dp"
         app:sliderIndicatorRadius="2dp"
-        app:sliderIndicatorSelectedColor="#606060"
+        app:sliderIndicatorSelectedColor="#3AFFBA"
         app:sliderIndicatorUnselectedColor="#DADADA"
         app:sliderScrollTimeInSec="2"
         app:sliderStartAutoCycle="true"
