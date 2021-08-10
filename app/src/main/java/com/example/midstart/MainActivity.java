@@ -4,11 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private Sensor sensor;
     private boolean isSensor;   // 센서 사용 가능한지
     private TextView stepSinceReboot;   // 걸음수
+
+    Button cardNews;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +73,17 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             isSensor = false;
         }
 
+        cardNews = (Button) findViewById(R.id.btn_cardnews);
+        cardNews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CardNewsActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
     @Override
     protected void onResume() {
         super.onResume();
