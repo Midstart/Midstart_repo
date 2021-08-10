@@ -6,4 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".CESActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:padding="16dp"
+        android:background="#B2EBF4"
+        tools:ignore="MissingConstraints">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ces_back_btn"
+
+
+            android:src="@drawable/ic_back"></ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="CSE-D 우울증 자가검사"
+
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+
+            android:id="@+id/title"/>
+
+
+
+
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
