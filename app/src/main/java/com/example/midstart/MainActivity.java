@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private boolean isSensor;   // 센서 사용 가능한지
     private TextView stepSinceReboot;   // 걸음수
 
-    Button cardNews;
+    Button cardNews;  //카드뉴스
+    Button cesTest; //우울증검사
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             isSensor = false;
         }
 
+        //카드뉴스로 이동
         cardNews = (Button) findViewById(R.id.btn_cardnews);
         cardNews.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +83,18 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 startActivity(intent);
             }
         });
+
+        //우울증 검사로 이동
+        cesTest= (Button) findViewById(R.id.btn_ces_d);
+        cesTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CESActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 
