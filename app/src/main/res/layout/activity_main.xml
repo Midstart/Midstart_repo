@@ -33,11 +33,26 @@
 
     <Button
         android:id="@+id/btn_cardnews"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:text="Card news"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/totalSteps" />
+
+    <Button
+        android:id="@+id/btn_ces_d"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="우울증 검사"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cardnews" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
