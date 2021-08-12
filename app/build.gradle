@@ -43,4 +43,7 @@ dependencies {
 
     //implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0' // image slider
     implementation 'com.github.smarteist:autoimageslider:1.4.0'
+    implementation 'com.google.firebase:firebase-messaging:11.0.4'
 }
+
+apply plugin: 'com.google.gms.google-services'
