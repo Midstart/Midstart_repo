@@ -256,8 +256,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private  void updateUI(weatherData weather){
         Temperature.setText(weather.getmTemperature());
         weatherState.setText(weather.getmWeatherType());
-        //int resourceID=getResources().getIdentifier(weather.getMicon(),"drawable",getPackageName());
-        //mweatherIcon.setImageResource(resourceID);
+        int resourceID=getResources().getIdentifier(weather.getMicon(),"drawable",getPackageName());
+        mweatherIcon.setImageResource(resourceID);
     }
 
 }
