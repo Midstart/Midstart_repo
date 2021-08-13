@@ -9,7 +9,6 @@ public class weatherData {
 
     public static weatherData fromJson(JSONObject jsonObject)
     {
-
         try
         {
             weatherData weatherD=new weatherData();
