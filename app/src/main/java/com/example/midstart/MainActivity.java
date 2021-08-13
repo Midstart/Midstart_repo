@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 UserAccount value =  snapshot.child("UserAccount").child(uid).getValue(UserAccount.class);
-                name.setText(value.getName()+" 님 안녕하세요!\n오늘 기분은 어떠신가요?");
+                name.setText(value.getName()+" 님 안녕하세요!\n어젯밤에는 잘 주무셨나요?\n오늘도 활기찬 하루를 시작해봐요.");
 
 
             }
