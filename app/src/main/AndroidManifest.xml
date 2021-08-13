@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.midstart">
+    package="com.example.midstart"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
+        android:usesCleartextTraffic="true"
+        tools:targetAPI="m"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Midstart">
-        <activity android:name=".CESresActivity"></activity>
+        <activity android:name=".ChatBotActivity"></activity>
+        <activity android:name=".CESresActivity" />
         <activity android:name=".CESActivity" />
         <activity android:name=".CardNews1" />
         <activity android:name=".CardNewsActivity" />
