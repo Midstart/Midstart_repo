@@ -7,53 +7,93 @@
     android:id="@+id/question_form"
     >
 
-    <TextView
-        android:id="@+id/ques"
-        android:layout_width="wrap_content"
+
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="1.평소엔 아무렇지도 않은 내용이 괴롭고 귀찮게 느껴졌다."
-        android:textColor="@color/black"
-        android:textSize="15dp"
-        android:layout_marginTop="30dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_margin="10dp"
+            >
+
+            <TextView
+                android:id="@+id/questionNum"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="01"
+                android:textColor="#AD8EDB"
+                android:textSize="30dp"
+
+                android:textStyle="bold"
+
+
+
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ques"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:text="매일 우울하다."
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/questionNum"
         app:layout_constraintTop_toTopOf="parent"></TextView>
 
     <RadioGroup
         android:id="@+id/ques_radio_group"
-        android:layout_width="wrap_content"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintStart_toEndOf="@+id/questionNum"
         app:layout_constraintTop_toBottomOf="@+id/ques">
 
         <RadioButton
             android:id="@+id/A"
             android:layout_width="90dp"
             android:layout_height="wrap_content"
-            android:text="1일 이하"
-            />
+            android:text="1일이하" />
 
         <RadioButton
             android:id="@+id/B"
-            android:layout_width="90dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="  1-2일" />
+            android:text=" 1-2일" />
 
         <RadioButton
             android:id="@+id/C"
-            android:layout_width="90dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="  3-4일" />
+            android:text=" 3-4일" />
 
         <RadioButton
             android:id="@+id/D"
-            android:layout_width="90dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="  5-7일" />
+            android:text=" 5-7일" />
 
     </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
