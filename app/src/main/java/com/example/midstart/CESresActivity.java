@@ -7,12 +7,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class CESresActivity extends AppCompatActivity {
 
     TextView scoreText;
     Button homeBtn;
+    ImageView cardnews1;
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,15 @@ public class CESresActivity extends AppCompatActivity {
         TextView des2=findViewById(R.id.more_des);
         des1.setText(CESActivity.getResult1());
         des2.setText(CESActivity.getResult2());
+
+        cardnews1 = (ImageView) findViewById(R.id.news1);
+        cardnews1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CardNews1.class);
+                startActivity(intent);
+            }
+        });
 
 
 

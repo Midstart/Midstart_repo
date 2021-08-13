@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class CESActivity extends AppCompatActivity {
 
     ImageView back_btn;
+
     Button res_btn;
     int questionNum=20; //질문 갯수
     public static int score=0; //검사 결과 점수
@@ -23,6 +24,7 @@ public class CESActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cesactivity);
         back_btn=(ImageView) findViewById(R.id.ces_back_btn);
         res_btn=findViewById(R.id.ces_res);
+
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,26 +35,26 @@ public class CESActivity extends AppCompatActivity {
 
         //질문 리스트 20개
         String [] quesList={
-                "1.\n평소에는 아무렇지도 않은 일들이 괴롭고 귀찮게 느껴졌다.",
-                "2.\n먹고 싶지 않고 식욕이 없다.",
-                "3.\n어느 누가 도와준다고 하더라도\n\t나의 울적한 기분을 떨쳐 버릴 수 없을 것 같다.",
-                "4.\n무슨 일을 하든 정신을 집중하기 힘들었다.",
-                "5.\n비교적 잘 지냈다.",
-                "6.\n상당히 우울했다.",
-                "7.\n모든 일들이 힘들게 느껴졌다.",
-                "8.\n앞일이 암담하게 느껴졌다.",
-                "9.\n지금까지의 내 인생을 실패작이라는 생각이 들었다.",
-                "10.\n적어도 보통 사람들만큼의 능력은 있다고 생각한다.",
-                "11.\n잠을 설쳤다.(잠을 잘 이루지 못했다.)",
-                "12.\n두려움을 느꼈다.",
-                "13.\n평소에 비해 말수가 적었다.",
-                "14.\n세상에 홀로 있는 듯한 외로움을 느꼈다.",
-                "15.\n큰 불만 없이 생활했다.",
-                "16.\n사람들이 나에게 차갑게 대하는 것 같았다.",
-                "17.\n갑자기 울음이 나왔다.",
-                "18.\n마음이 슬펐다.",
-                "19.\n사람들이 나를 싫어하는 것 같았다.",
-                "20.\n도무지 뭘 해나갈 엄두가 나지 않았다."
+                "평소에는 아무렇지도 않은 일들이 괴롭고 귀찮게\n느껴졌다.",
+                "먹고 싶지 않고 식욕이 없다.",
+                "어느 누가 도와준다고 하더라도\n나의 울적한 기분을 떨쳐 버릴 수 없을 것 같다.",
+                "무슨 일을 하든 정신을 집중하기 힘들었다.",
+                "비교적 잘 지냈다.",
+                "상당히 우울했다.",
+                "모든 일들이 힘들게 느껴졌다.",
+                "앞일이 암담하게 느껴졌다.",
+                "지금까지의 내 인생을 실패작이라는 생각이 들었다.",
+                "적어도 보통 사람들만큼의 능력은 있다고 생각한다.",
+                "잠을 설쳤다.(잠을 잘 이루지 못했다.)",
+                "두려움을 느꼈다.",
+                "평소에 비해 말수가 적었다.",
+                "세상에 홀로 있는 듯한 외로움을 느꼈다.",
+                "큰 불만 없이 생활했다.",
+                "사람들이 나에게 차갑게 대하는 것 같았다.",
+                "갑자기 울음이 나왔다.",
+                "마음이 슬펐다.",
+                "사람들이 나를 싫어하는 것 같았다.",
+                "도무지 뭘 해나갈 엄두가 나지 않았다."
         };
 
         //score=0;
@@ -63,7 +65,9 @@ public class CESActivity extends AppCompatActivity {
             int resID = getResources().getIdentifier(name, "id", "com.example.midstart");
             View questSetView = (View)findViewById(resID);
             TextView question = (TextView)questSetView.findViewById(R.id.ques);
+            TextView quesNum=(TextView)questSetView.findViewById(R.id.questionNum);
             // 기존에 씌여져 있던 텍스트(질문)을 변경한다.
+            quesNum.setText(String.valueOf(i));
             question.setText(quesList[i-1]);
 
             int scoreList [];

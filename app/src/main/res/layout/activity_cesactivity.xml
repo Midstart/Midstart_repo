@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5F5F5"
     tools:context=".CESActivity">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="110dp"
-        android:background="#B2EBF4"
+        android:background="#F1F0FF"
         android:padding="16dp"
 
 
@@ -113,7 +114,6 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             />
-
 
     </LinearLayout>
 
