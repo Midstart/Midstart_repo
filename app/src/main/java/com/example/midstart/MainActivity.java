@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 UserAccount value =  snapshot.child("UserAccount").child(uid).getValue(UserAccount.class);
-                name.setText(value.getName()+" 님 안녕하세요!\n어젯밤에는 잘 주무셨나요?\n오늘도 활기찬 하루를 시작해봐요.");
+                name.setText(value.getName()+" 님 안녕하세요!\n오늘도 즐거운 하루를 시작해봐요.");
 
 
             }
@@ -129,7 +129,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             }
         });
 
-        ImageView chat = (ImageView) findViewById(R.id.btn_chat);
+        // 채팅 화면으로 이동
+        ImageView chat = (ImageView) findViewById(R.id.btn_chat_trans);
         chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,6 +138,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 startActivity(intent);
             }
         });
+
 
     }
 
