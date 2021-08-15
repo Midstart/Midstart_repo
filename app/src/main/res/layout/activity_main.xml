@@ -199,6 +199,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop" />
+                    <DrawableButton
+                        android:id="@+id/btn_cardnews"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/thumbnail02"
+                        android:text="Card news" />
 
                     <ImageView
                         android:id="@+id/thumbnail2"
@@ -209,13 +215,6 @@
                         tools:ignore="MissingConstraints"></ImageView>
                 </androidx.cardview.widget.CardView>
 
-        <!--Todo: 이미지 연결 다시 하기
-                <Button
-                        android:id="@+id/btn_cardnews"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/thumbnail02"
-                        android:text="Card news" />-->
 
 
                 <androidx.cardview.widget.CardView
@@ -229,7 +228,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cardView8">
 
-                    <Button
+                    <DrawableButton
                         android:id="@+id/btn_ces_d"
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
