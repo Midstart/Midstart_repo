@@ -1,16 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
     tools:context=".ChatBotActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chattopbar"
+        android:background="#DEDDFA"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="미디"
+            android:textSize="18dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/cafe24oneprettynight"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="10dp"
         android:id="@+id/idRVChats"
+        android:layout_below="@id/chattopbar"
         android:layout_above="@id/idRLMsg"/>
 
     <RelativeLayout
@@ -22,9 +53,8 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:id="@+id/idETMessage"
-            android:layout_margin="3dp"
+            android:layout_margin="10dp"
             android:layout_centerInParent="true"
             android:layout_toLeftOf="@+id/idFABSend"
             android:textColorHint="@color/black"
@@ -34,10 +64,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:backgroundTint="#BE9FE1"
+            android:backgroundTint="@color/fab_color"
+            app:backgroundTint="#EDDEFF"
+            app:borderWidth="0dp"
             android:src="@drawable/ic_send"
             android:id="@+id/idFABSend"
-            android:layout_margin="4dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginRight="15dp"
             app:fabCustomSize="45dp"
             app:tint="@color/white"
             android:layout_alignParentRight="true"
