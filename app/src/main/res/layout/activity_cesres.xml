@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:layout_gravity="center_vertical"
     tools:context=".CESresActivity">
 
     <androidx.cardview.widget.CardView
@@ -43,8 +45,8 @@
         app:layout_constraintTop_toBottomOf="@+id/aboutces"
         app:cardElevation="8dp">
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
@@ -56,7 +58,7 @@
         android:text="당신의 우울증 검진 결과는"
         android:layout_gravity="center"
         android:textColor="@color/black"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +73,7 @@
         android:text="20점"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="40dp"
+        android:textSize="30dp"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +85,7 @@
         android:layout_height="wrap_content"
         android:text="입니다."
         android:textColor="@color/black"
-        android:textSize="25dp"
+        android:textSize="20dp"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,7 +100,7 @@
         android:textStyle="bold"
         android:text="우울증 지수는 정상군에 속합니다!"
         android:textColor="@color/black"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,9 +112,9 @@
         android:layout_marginRight="28dp"
         android:layout_marginLeft="28dp"
         android:gravity="center"
-        android:text="우울증 검진 결과가 15점 이하로 정신이 아주 건강한 상태라고 볼 수 있습니다! 앞으로도 지금처럼만 관리해주세요~*^^*"
+        android:text="우울증 검진 결과가 25점 이상으로, 정신건강의학과 전문의 상담과 도움이 필요합니다. 우울증 치료에 중요한 것은 본인의 의지입니다. 전문기관의 도움을 받는 것을 두려워하지 마세요!"
         android:textColor="@color/black"
-        android:textSize="18dp"
+        android:textSize="14dp"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -123,7 +125,7 @@
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="#AD8EDB"
         android:text="홈으로 돌아가기"
         android:textColor="@color/white"
@@ -137,7 +139,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textStyle="bold"
-        android:layout_margin="10dp"
+        android:layout_margin="8dp"
         android:text="더 많은 정보를 얻으려면 아래 이미지를 클릭하세요!"
         android:textColor="@color/black"
         android:textSize="18dp"

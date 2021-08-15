@@ -67,7 +67,12 @@ public class CESActivity extends AppCompatActivity {
             TextView question = (TextView)questSetView.findViewById(R.id.ques);
             TextView quesNum=(TextView)questSetView.findViewById(R.id.questionNum);
             // 기존에 씌여져 있던 텍스트(질문)을 변경한다.
-            quesNum.setText(String.valueOf(i));
+            if(i<=9){
+                quesNum.setText("0"+String.valueOf(i));
+            }
+            else{
+                quesNum.setText(String.valueOf(i));
+            }
             question.setText(quesList[i-1]);
 
             int scoreList [];
