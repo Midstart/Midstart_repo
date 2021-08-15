@@ -124,15 +124,27 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:src="@drawable/thumb1"
+                        >
+                        <ImageView
+                            android:id="@+id/thumbnail1"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/thumbnail01"
+                            tools:ignore="MissingConstraints"></ImageView>
 
                         <TextView
                             android:id="@+id/totalSteps"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="174dp"
+                            android:layout_height="80dp"
                             android:gravity="center"
                             android:text="STEPS: 0"
-                            android:textSize="20dp" />
+                            android:textSize="20dp"
+                            tools:layout_editor_absoluteX="51dp"
+                            tools:layout_editor_absoluteY="7dp"
+                            tools:ignore="MissingConstraints" />
 
                         <ImageView
                             android:id="@+id/weatherIcon"
@@ -142,7 +154,8 @@
                             android:layout_marginRight="10dp"
                             android:src="@mipmap/ic_launcher"
                             app:layout_constraintEnd_toStartOf="@+id/weatherCondition"
-                            app:layout_constraintTop_toTopOf="parent"></ImageView>
+                            app:layout_constraintTop_toTopOf="parent"
+                            ></ImageView>
 
                         <TextView
                             android:id="@+id/temperature"
@@ -181,18 +194,29 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cardView">
 
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop" />
 
-                    <Button
+                    <ImageView
+                        android:id="@+id/thumbnail2"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/thumbnail03"
+                        tools:ignore="MissingConstraints"></ImageView>
+                </androidx.cardview.widget.CardView>
+
+        <!--Todo: 이미지 연결 다시 하기
+                <Button
                         android:id="@+id/btn_cardnews"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Card news" />
+                        android:src="@drawable/thumbnail02"
+                        android:text="Card news" />-->
 
-                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView9"
@@ -214,6 +238,13 @@
                         android:text="우울증 검사"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
+                    <ImageView
+                        android:id="@+id/thumbnail3"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/thumbnail02"
+                        tools:ignore="MissingConstraints"></ImageView>
 
                 </androidx.cardview.widget.CardView>
 
@@ -226,7 +257,8 @@
                     app:cardElevation="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cardView9">
+                    app:layout_constraintTop_toBottomOf="@+id/cardView9"
+                    android:background="@drawable/customborder">
 
                     <TextView
                         android:layout_width="match_parent"
