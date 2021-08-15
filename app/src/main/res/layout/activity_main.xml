@@ -152,7 +152,7 @@
                             android:layout_height="40dp"
                             android:layout_marginTop="20dp"
                             android:layout_marginRight="10dp"
-                            android:src="@mipmap/ic_launcher"
+                            android:src="@drawable/sunny"
                             app:layout_constraintEnd_toStartOf="@+id/weatherCondition"
                             app:layout_constraintTop_toTopOf="parent"
                             ></ImageView>
