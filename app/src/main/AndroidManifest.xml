@@ -15,7 +15,8 @@
         android:theme="@style/Theme.Midstart"
         android:usesCleartextTraffic="true"
         tools:targetAPI="m">
-        <activity android:name=".KuppermanActivity"></activity>
+        <activity android:name=".KresActivity"></activity>
+        <activity android:name=".KuppermanActivity" />
         <activity android:name=".ChatBotActivity" />
         <activity android:name=".CESresActivity" />
         <activity android:name=".CESActivity" />

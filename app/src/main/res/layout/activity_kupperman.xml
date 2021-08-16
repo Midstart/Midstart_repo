@@ -1,18 +1,110 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5F5F5"
     tools:context=".KuppermanActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="쿠퍼만 갱년기 지수\n갱년기 증상의 진행 정도를 판단하고, 간단한 대처법을 제공"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="#F1F0FF"
+        android:padding="16dp"
+
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ces_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"></ImageView>
+
+        <TextView
+            android:id="@+id/title"
+            android:fontFamily="@font/cafe24oneprettynight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="쿠퍼만(Kupperman) 갱년기 지수"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/description"
+            android:fontFamily="@font/cafe24oneprettynight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="아래의 항목과 같은 증상을\n어느 정도로 겪었는지 체크해주세요."
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ques_scroll"
+        android:layout_marginTop="120dp"
+
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ques16"
+            android:orientation="vertical"
+
+            >
+            <include layout="@layout/test_ques"
+                android:id="@+id/t1" />
+            <include layout="@layout/test_ques"
+                android:id="@+id/t2"/>
+            <include layout="@layout/test_ques"
+                android:id="@+id/t3"/>
+            <include layout="@layout/test_ques"
+                android:id="@+id/t4" />
+            <include layout="@layout/test_ques"
+                android:id="@+id/t5"/>
+            <include layout="@layout/test_ques"
+                android:id="@+id/t6"/>
+            <include layout="@layout/test_ques"
+                android:id="@+id/t7" />
+            <include layout="@layout/test_ques"
+                android:id="@+id/t8"/>
+            <include layout="@layout/test_ques"
+                android:id="@+id/t9"/>
+            <include layout="@layout/test_ques"
+                android:id="@+id/t10" />
+            <include layout="@layout/test_ques"
+                android:id="@+id/t11"/>
+
+            <Button
+                android:id="@+id/k_res"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="결과 확인"
+                android:backgroundTint="#AD8EDB"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
