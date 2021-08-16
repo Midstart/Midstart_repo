@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private Sensor sensor;
     private boolean isSensor;   // 센서 사용 가능한지
     private TextView stepSinceReboot;   // 걸음수
+    int stepNow;
 
     // 날씨, 위치 관련
     final String APP_ID = "ac5471e3caa6df5bb40fbe111f57c735";
@@ -141,6 +142,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         });
 
 
+
+
+
     }
 
     @Override
@@ -178,7 +182,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        stepSinceReboot.setText("STEPS: "+String.valueOf((int)event.values[0]));
+        stepSinceReboot.setText(String.valueOf((int)event.values[0]));
+        stepNow = (int)event.values[0];
     }
 
     @Override
@@ -270,6 +275,51 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         weatherState.setText(weather.getmWeatherType());
         int resourceID=getResources().getIdentifier(weather.getMicon(),"drawable",getPackageName());
         mweatherIcon.setImageResource(resourceID);
+
+        TextView pedometerTxt = findViewById(R.id.pedometerTxt);    // 현재 날씨와 걸음수에 따른 조언
+
+        int temp_now = weather.getTempforTip(); // 현재 온도
+        String tmp_w = weather.getMicon();  // 날씨 상태
+        int weather_state=0; // 0 좋음 1 흐림 2 산책할 수 없는 날씨
+        if(tmp_w=="sunny")
+            weather_state=0;
+        else if(tmp_w=="cloudy"||tmp_w=="fog"||tmp_w=="overcast")
+            weather_state=1;
+        else
+            weather_state=2;
+
+        if(stepNow<4000){
+            if(weather_state==0&&temp_now<30&&temp_now>0){
+                pedometerTxt.setText("산책하기에 딱 좋은 날씨예요!\n");
+            }
+            else if(weather_state==1&&temp_now<30&&temp_now>0){
+                pedometerTxt.setText("날은 조금 흐리지만 산책하기에 좋은 날씨예요!\n");
+            }
+            else if(weather_state==2&&temp_now<30&&temp_now>0){
+                pedometerTxt.setText("날씨가 좋지 않지만...\n");
+            }
+            else if(temp_now>=30){
+                pedometerTxt.setText("오늘은 날씨가 덥네요.\n폭염 주의하시고 실내에서 활동해봐요!");
+            }
+            else if(temp_now<=0){
+                pedometerTxt.setText("날씨가 너무 추워요!\n감기 조심하시고 실내에서 활동해봐요!");
+            }
+        }
+        else if(stepNow>=4000){
+            if(temp_now<30&&temp_now>0){
+                pedometerTxt.setText("아주 좋아요!\n규칙적인 유산소 운동은 갱년기 증상 완화에 도움이 됩니다.");
+            }
+            else if(temp_now>=30){
+                pedometerTxt.setText("규칙적인 생활 아주 좋아요!\n날씨가 더운데 건강 조심하세요!");
+            }
+            else if(temp_now<=0){
+                pedometerTxt.setText("규칙적인 생활 아주 좋아요!\n날씨가 추운데 감기 조심하세요!");
+            }
+            
+        }
+
+
+
     }
 
 }
