@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     ImageView cardNews;  //카드뉴스
     ImageView cesTest; //우울증검사
+    ImageView KTest; //갱년기검사
 
 
     @Override
@@ -140,6 +141,18 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 startActivity(intent);
             }
         });
+
+        //갱년기 검사로 이동
+        KTest= (ImageView) findViewById(R.id.thumbnail4);
+        KTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), KuppermanActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
 
 
@@ -293,10 +306,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 pedometerTxt.setText("산책하기에 딱 좋은 날씨예요!\n");
             }
             else if(weather_state==1&&temp_now<30&&temp_now>0){
-                pedometerTxt.setText("날은 조금 흐리지만 산책하기에 좋은 날씨예요!\n");
+                pedometerTxt.setText("조금 흐리긴 하지만 산책하기에 좋은 날씨예요!\n");
             }
             else if(weather_state==2&&temp_now<30&&temp_now>0){
-                pedometerTxt.setText("날씨가 좋지 않지만...\n");
+                pedometerTxt.setText("날씨가 좋지 않네요.\n요가 등 실내 운동을 해보는건 어떨까요?");
             }
             else if(temp_now>=30){
                 pedometerTxt.setText("오늘은 날씨가 덥네요.\n폭염 주의하시고 실내에서 활동해봐요!");
