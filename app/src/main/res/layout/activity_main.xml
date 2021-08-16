@@ -127,13 +127,16 @@
                         android:layout_height="match_parent"
                         android:src="@drawable/thumb1"
                         >
+
                         <ImageView
                             android:id="@+id/thumbnail1"
                             android:layout_width="match_parent"
                             android:layout_height="200dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/thumbnail01"
-                            tools:ignore="MissingConstraints"></ImageView>
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"></ImageView>
 
                         <TextView
                             android:id="@+id/totalSteps"
@@ -196,23 +199,13 @@
 
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop" />
-                    <DrawableButton
-                        android:id="@+id/btn_cardnews"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/thumbnail02"
-                        android:text="Card news" />
-
-                    <ImageView
                         android:id="@+id/thumbnail2"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/thumbnail03"
                         tools:ignore="MissingConstraints"></ImageView>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -228,15 +221,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cardView8">
 
-                    <DrawableButton
-                        android:id="@+id/btn_ces_d"
-                        android:layout_width="match_parent"
-                        android:layout_height="130dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:text="우울증 검사"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
                     <ImageView
                         android:id="@+id/thumbnail3"
                         android:layout_width="match_parent"

@@ -61,8 +61,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     LocationManager mLocationManager;
     LocationListener mLocationListner;
 
-    Button cardNews;  //카드뉴스
-    Button cesTest; //우울증검사
+    ImageView cardNews;  //카드뉴스
+    ImageView cesTest; //우울증검사
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         }
 
         //카드뉴스로 이동
-        cardNews = (Button) findViewById(R.id.btn_cardnews);
+        cardNews = (ImageView) findViewById(R.id.thumbnail2);
         cardNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         });
 
         //우울증 검사로 이동
-        cesTest= (Button) findViewById(R.id.btn_ces_d);
+        cesTest= (ImageView) findViewById(R.id.thumbnail3);
         cesTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
