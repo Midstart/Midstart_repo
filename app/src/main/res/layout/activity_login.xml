@@ -17,7 +17,7 @@
         android:ems="10"
         android:hint="이메일을 입력하세요"
         android:inputType="textEmailAddress"
-        android:textSize="20dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo" />
@@ -28,7 +28,7 @@
         android:layout_height="60dp"
         android:fontFamily="@font/cafe24oneprettynight"
         android:ems="10"
-        android:textSize="20dp"
+
         android:inputType="textPassword"
         android:hint="비밀번호를 입력하세요"
 
@@ -40,14 +40,14 @@
     <Button
         android:id="@+id/btn_login"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="55dp"
         android:layout_marginLeft="75dp"
         android:layout_marginRight="75dp"
 
         android:text="로그인"
 
         android:background="@drawable/button_design"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +57,7 @@
     <Button
         android:id="@+id/btn_register"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="55dp"
         android:layout_marginLeft="75dp"
         android:layout_marginRight="75dp"
         android:layout_marginTop="10dp"
@@ -72,13 +72,14 @@
     <Button
         android:id="@+id/default_login"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="55dp"
         android:layout_marginLeft="75dp"
         android:layout_marginRight="75dp"
         android:layout_marginTop="10dp"
-        android:text="임시 계정으로 로그인"
-        android:background="@drawable/button_design"
-        android:textColor="@color/white"
+        android:text="둘러보기 먼저 할래요!"
+        android:background="@drawable/button_design_2"
+
+        android:textColor="#AD8EDB"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
