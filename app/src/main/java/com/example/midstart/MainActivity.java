@@ -306,7 +306,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 pedometerTxt.setText("산책하기에 딱 좋은 날씨예요!\n");
             }
             else if(weather_state==1&&temp_now<30&&temp_now>0){
-                pedometerTxt.setText("조금 흐리긴 하지만 산책하기에 좋은 날씨예요!\n");
+                pedometerTxt.setText("조금 흐리긴 하지만 산책하기에 좋은 날씨예요!\n잠깐이라도 나가서 걸으며 기분전환해봐요~");
             }
             else if(weather_state==2&&temp_now<30&&temp_now>0){
                 pedometerTxt.setText("날씨가 좋지 않네요.\n요가 등 실내 운동을 해보는건 어떨까요?");
