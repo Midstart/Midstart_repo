@@ -7,10 +7,10 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="#FFFFFF"
-    tools:context=".CardNews1">
+    tools:context=".CardNews2">
 
     <com.smarteist.autoimageslider.SliderView
-        android:id="@+id/slider1"
+        android:id="@+id/slider2"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         app:sliderAnimationDuration="10000"

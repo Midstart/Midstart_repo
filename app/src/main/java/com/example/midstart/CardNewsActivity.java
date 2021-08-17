@@ -10,6 +10,7 @@ import android.widget.ImageView;
 public class CardNewsActivity extends AppCompatActivity {
 
     ImageView cardnews1;
+    ImageView cardnews2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,15 @@ public class CardNewsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), CardNews1.class);
+                startActivity(intent);
+            }
+        });
+
+        cardnews2 = (ImageView) findViewById(R.id.news2);
+        cardnews2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CardNews2.class);
                 startActivity(intent);
             }
         });

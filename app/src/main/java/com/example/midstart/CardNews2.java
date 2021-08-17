@@ -11,26 +11,23 @@ import com.smarteist.autoimageslider.SliderView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CardNews1 extends AppCompatActivity {
+public class CardNews2 extends AppCompatActivity {
 
     SliderView sliderView;
-    int[] images = {R.drawable.news1_1,
-            R.drawable.news1_2,
-            R.drawable.news1_3,
-            R.drawable.news1_4,
-            R.drawable.news1_5,
-            R.drawable.news1_6,
-            R.drawable.news1_7,
-            R.drawable.news1_8};
+    int[] images = {R.drawable.news3_1,
+            R.drawable.news3_2,
+            R.drawable.news3_3,
+            R.drawable.news3_4,
+            R.drawable.news3_5,};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_card_news1);
+        setContentView(R.layout.activity_card_news2);
 
-        sliderView = findViewById(R.id.slider1);
+        sliderView = findViewById(R.id.slider2);
 
-        SliderAdapter sliderAdapter = new SliderAdapter(images, 1);
+        SliderAdapter sliderAdapter = new SliderAdapter(images,2);
         sliderView.setSliderAdapter(sliderAdapter);
         sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
         sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
