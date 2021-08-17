@@ -262,7 +262,7 @@
                             android:layout_marginTop="40dp"
                             android:background="#FFF1ED"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/thumbnail03"
+                            android:src="@drawable/thumbnail05"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.0"
@@ -316,7 +316,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/thumbnail04"
+                        android:src="@drawable/thumbnail03"
                         android:layout_marginBottom="60dp"
                         android:paddingBottom="30dp"
                         tools:ignore="MissingConstraints"></ImageView>
@@ -339,6 +339,15 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="Next CardView" />
+                    <ImageView
+                        android:id="@+id/thumbnail5"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/thumbnail04"
+                        android:layout_marginBottom="60dp"
+                        android:paddingBottom="30dp"
+                        tools:ignore="MissingConstraints"></ImageView>
 
                 </androidx.cardview.widget.CardView>
 

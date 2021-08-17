@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         }
 
         //카드뉴스로 이동
-        cardNews = (ImageView) findViewById(R.id.thumbnail2);
+        cardNews = (ImageView) findViewById(R.id.thumbnail4);
         cardNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
