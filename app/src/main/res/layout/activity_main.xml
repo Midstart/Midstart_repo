@@ -110,6 +110,17 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/customborder">
 
+                <ImageView
+                    android:id="@+id/upbar"
+                    android:layout_width="60dp"
+                    android:layout_height="5dp"
+                    android:layout_marginVertical="15dp"
+                    android:background="@drawable/upbar"
+                    app:layout_constraintCircleRadius="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView"
                     android:layout_width="match_parent"
@@ -120,22 +131,21 @@
                     app:cardElevation="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toBottomOf="@+id/upbar">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/thumb1"
                         android:background="#FFF2C5"
-                        >
+                        android:src="@drawable/thumb1">
 
                         <TextView
-                            android:fontFamily="@font/cafe24oneprettynight"
                             android:id="@+id/textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="25dp"
+                            android:fontFamily="@font/cafe24oneprettynight"
                             android:text="걸음 수"
                             android:textColor="@color/black"
                             android:textSize="25dp"
@@ -143,29 +153,29 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:fontFamily="@font/cafe24oneprettynight"
-                            android:textStyle="bold"
                             android:id="@+id/totalSteps"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/cafe24oneprettynight"
                             android:gravity="center"
                             android:text="STEPS: 0"
-                            android:textSize="30dp"
                             android:textColor="#FF6363"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginLeft="10dp"
+                            android:textSize="30dp"
+                            android:textStyle="bold"
                             app:layout_constraintStart_toEndOf="@+id/textView"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:fontFamily="@font/cafe24oneprettynight"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="30dp"
+                            android:fontFamily="@font/cafe24oneprettynight"
                             android:text="걸음"
                             android:textColor="@color/black"
                             android:textSize="15dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="30dp"
                             app:layout_constraintStart_toEndOf="@+id/totalSteps"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -218,8 +228,8 @@
                             android:fontFamily="@font/cafe24oneprettynight"
                             android:lineSpacingExtra="5dp"
                             android:text="아주 좋아요!\n규칙적인 유산소 운동은 갱년기 증상 완화에 도움이 됩니다."
-                            android:textSize="13dp"
                             android:textColor="@color/black"
+                            android:textSize="13dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/totalSteps" />
@@ -281,6 +291,7 @@
                         android:layout_height="200dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/thumbnail02"
+                        android:paddingBottom="20dp"
                         tools:ignore="MissingConstraints"></ImageView>
 
                 </androidx.cardview.widget.CardView>
@@ -305,6 +316,8 @@
                         android:layout_height="200dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/thumbnail04"
+                        android:layout_marginBottom="60dp"
+                        android:paddingBottom="30dp"
                         tools:ignore="MissingConstraints"></ImageView>
 
                 </androidx.cardview.widget.CardView>
