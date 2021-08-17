@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -28,6 +29,8 @@ public class ChatBotActivity extends AppCompatActivity {
     private final String USER_KEY = "user";
     private ArrayList<ChatsModal> chatsModalArrayList;
     private ChatRVAdapter chatRVAdapter;
+
+    private TextView bot_time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

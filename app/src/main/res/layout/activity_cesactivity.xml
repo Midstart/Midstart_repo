@@ -106,9 +106,13 @@
         <include layout="@layout/test_ques"
             android:id="@+id/q20"/>
        <Button
+
             android:id="@+id/ces_res"
+            android:background="@drawable/button_design"
             android:layout_width="150dp"
-            android:layout_height="60dp"
+            android:layout_height="45dp"
+            android:elevation="8dp"
+            android:layout_marginBottom="20dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:text="결과 확인"

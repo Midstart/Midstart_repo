@@ -20,6 +20,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <TextView
+            android:fontFamily="@font/cafe24oneprettynight"
+            android:lineSpacingExtra="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -52,6 +54,7 @@
 
             tools:ignore="MissingConstraints">
             <TextView
+                android:fontFamily="@font/cafe24oneprettynight"
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -67,6 +70,8 @@
                 />
 
             <TextView
+                android:fontFamily="@font/cafe24oneprettynight"
+                android:padding="5dp"
                 android:id="@+id/result_score2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -80,6 +85,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <TextView
+                android:fontFamily="@font/cafe24oneprettynight"
                 android:id="@+id/text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -94,6 +100,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
+        android:fontFamily="@font/cafe24oneprettynight"
         android:id="@+id/result_des"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -106,6 +113,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardtest" />
     <TextView
+        android:fontFamily="@font/cafe24oneprettynight"
+        android:lineSpacingExtra="5dp"
         android:id="@+id/more_des"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -121,19 +130,22 @@
         app:layout_constraintTop_toBottomOf="@+id/result_des" />
 
     <Button
+        android:background="@drawable/button_design"
         android:id="@+id/ces_res"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:elevation="8dp"
+        android:layout_width="170dp"
+        android:layout_height="45dp"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
         android:backgroundTint="#AD8EDB"
         android:text="홈으로 돌아가기"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/more_des" />
     <TextView
+        android:fontFamily="@font/cafe24oneprettynight"
         android:id="@+id/textview4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
