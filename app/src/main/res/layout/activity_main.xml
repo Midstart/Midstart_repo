@@ -334,14 +334,11 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cardView10">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="Next CardView" />
+
                     <ImageView
                         android:id="@+id/thumbnail5"
                         android:layout_width="match_parent"
+
                         android:layout_height="200dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/thumbnail04"
