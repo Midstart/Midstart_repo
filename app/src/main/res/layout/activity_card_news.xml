@@ -84,7 +84,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/thumb2"></ImageView>
+                    android:src="@drawable/thumb6"></ImageView>
 
             </androidx.cardview.widget.CardView>
 
@@ -164,7 +164,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/thumb6"></ImageView>
+                    android:src="@drawable/thumb2"></ImageView>
 
             </androidx.cardview.widget.CardView>
 

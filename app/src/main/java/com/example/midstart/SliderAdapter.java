@@ -10,16 +10,29 @@ import com.smarteist.autoimageslider.SliderViewAdapter;
 public class SliderAdapter extends SliderViewAdapter<SliderAdapter.Holder> {
 
     int[] images;
+    int flag;
 
-    public SliderAdapter(int[] images){
+    public SliderAdapter(int[] images, int flag){
         this.images = images;
+        this.flag = flag;
     }
 
     @Override
     public Holder onCreateViewHolder(ViewGroup parent) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.slider1_item,parent,false);
+        View view = null;
+        if(flag ==1) {
+            view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.slider1_item,parent,false);
+
+        }
+        else if(flag ==2){
+            view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.slider2_item,parent,false);
+        }
+
         return new Holder(view);
+
+
     }
 
     @Override
@@ -36,7 +49,11 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.Holder> {
         ImageView imageView;
         public Holder(View itemView){
             super(itemView);
-            imageView = itemView.findViewById(R.id.slider1_iv);
+            if(flag==1)
+                imageView = itemView.findViewById(R.id.slider1_iv);
+            else if(flag==2)
+                imageView = itemView.findViewById(R.id.slider2_iv);
+
         }
     }
 }
