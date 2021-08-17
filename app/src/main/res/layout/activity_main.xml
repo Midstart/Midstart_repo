@@ -248,13 +248,16 @@
                             android:id="@+id/thumbnail2"
                             android:layout_width="wrap_content"
                             android:layout_height="200dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/thumbnail03_new"
+                            android:layout_marginTop="40dp"
                             android:background="#FFF1ED"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/thumbnail03"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"></ImageView>
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.533"></ImageView>
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -301,7 +304,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/thumbnail02"
+                        android:src="@drawable/thumbnail04"
                         tools:ignore="MissingConstraints"></ImageView>
 
                 </androidx.cardview.widget.CardView>
