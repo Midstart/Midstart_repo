@@ -9,7 +9,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class ChatRVAdapter extends RecyclerView.Adapter {
     private ArrayList<ChatsModal> chatsModalArrayList;
@@ -40,12 +44,15 @@ public class ChatRVAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         ChatsModal chatsModal = chatsModalArrayList.get(position);
+        String currentTime = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date());
         switch (chatsModal.getSender()){
             case "user":
                 ((UserViewHolder)holder).userTV.setText(chatsModal.getMessage());
+                ((UserViewHolder)holder).user_time.setText(currentTime);
                 break;
             case "bot":
                 ((BotViewHolder)holder).botTV.setText(chatsModal.getMessage());
+                ((BotViewHolder)holder).bot_time.setText(currentTime);
                 break;
         }
     }
@@ -69,18 +76,23 @@ public class ChatRVAdapter extends RecyclerView.Adapter {
 
     public static class UserViewHolder extends RecyclerView.ViewHolder{
         TextView userTV;
+        TextView user_time;
 
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
             userTV = itemView.findViewById(R.id.idTVUser);
+            user_time = itemView.findViewById(R.id.userTime);
         }
     }
 
     public static class BotViewHolder extends RecyclerView.ViewHolder{
         TextView botTV;
+        TextView bot_time;
         public BotViewHolder(@NonNull View itemView) {
             super(itemView);
             botTV = itemView.findViewById(R.id.idTVBot);
+            bot_time = itemView.findViewById(R.id.botTime);
+
         }
     }
 }
