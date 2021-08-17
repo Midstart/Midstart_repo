@@ -28,7 +28,7 @@
         android:fontFamily="@font/cafe24oneprettynight"
         android:ems="10"
         android:hint="이름을 입력하세요"
-        android:textSize="20dp"
+
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +51,7 @@
         android:id="@+id/et_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+
         android:ems="10"
         android:hint="이메일을 입력하세요"
         android:inputType="textEmailAddress"
@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
 
         android:ems="10"
-        android:textSize="20dp"
+
         android:inputType="textPassword"
         android:hint="비밀번호를 입력하세요"
         android:fontFamily="@font/cafe24oneprettynight"
@@ -92,7 +92,7 @@
     <Button
         android:id="@+id/btn_register"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="55dp"
         android:layout_marginLeft="75dp"
         android:layout_marginRight="75dp"
         android:layout_marginTop="10dp"
@@ -109,7 +109,7 @@
     <Button
         android:id="@+id/gotoLogin"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="55dp"
         android:background="@drawable/button_design"
         android:text="이전으로"
         android:textColor="@color/white"
