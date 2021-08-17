@@ -41,11 +41,11 @@ public class CESresActivity extends AppCompatActivity {
         des1.setText(CESActivity.getResult1());
         des2.setText(CESActivity.getResult2());
 
-        cardnews1 = (ImageView) findViewById(R.id.news1);
+        cardnews1 = (ImageView) findViewById(R.id.news2);
         cardnews1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), CardNews1.class);
+                Intent intent = new Intent(getApplicationContext(), CardNews2.class);
                 startActivity(intent);
             }
         });
