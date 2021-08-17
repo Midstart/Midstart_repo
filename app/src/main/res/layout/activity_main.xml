@@ -250,6 +250,7 @@
                             android:layout_height="200dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/thumbnail03_new"
+                            android:background="#FFF1ED"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
