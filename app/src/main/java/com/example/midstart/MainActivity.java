@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         }
 
         //카드뉴스로 이동
-        cardNews = (ImageView) findViewById(R.id.thumbnail2);
+        cardNews = (ImageView) findViewById(R.id.thumbnail4);
         cardNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         });
 
         //갱년기 검사로 이동
-        KTest= (ImageView) findViewById(R.id.thumbnail4);
+        KTest= (ImageView) findViewById(R.id.thumbnail5);
         KTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         //일기로 이동
         //cardView11
-        diary= (ImageView) findViewById(R.id.thumbnail5);
+        diary= (ImageView) findViewById(R.id.thumbnail2);
         diary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -170,11 +170,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 startActivity(intent);
             }
         });
-
-
-
-
-
 
 
 
