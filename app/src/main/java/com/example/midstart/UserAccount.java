@@ -1,6 +1,10 @@
 package com.example.midstart;
 
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class UserAccount {
 
@@ -9,6 +13,8 @@ public class UserAccount {
     private String password;
 
     private String name;
+
+    public List<diary> diaryList;
 
 
 
@@ -48,6 +54,48 @@ public class UserAccount {
     }
     public void setName(String name){
         this.name=name;
+    }
+
+    public void addDiary(diary d){
+
+        diaryList.add(d);
+    }
+
+    public void setDiaryList(){
+        diaryList=new ArrayList();
+        diary d=new diary("0000-00-00 00","오늘은 밋스타트를 시작한 날이야.");
+        diaryList.add(d);
+    }
+    public void removeTodayDiary(){
+        if(!diaryList.isEmpty()&&diaryList.size()!=1)
+            diaryList.remove(diaryList.size()-1);
+    }
+
+    public boolean checkdiaryDate(String newDate){
+        String date;
+
+        diary d;
+
+        if( diaryList.isEmpty() ){
+            date= "2000-01-01 00:00:00";
+        }
+        else {
+            d= diaryList.get(diaryList.size()-1);
+            date=d.getDate();
+        }
+
+        date=date.substring(0,10);
+        String tempDate=newDate.substring(0,10);
+        if(date.equals(tempDate)) return false;
+        else return true;
+
+    }
+    public String getDiaryListAll(){
+       String s="일기목록-임시(달력 옮기면 지울 예정)\n";
+       for(int i=1;i<diaryList.size();i++){
+           s= s+diaryList.get(i).getDate()+" : "+ diaryList.get(i).getDiary()+"\n";
+       }
+       return s;
     }
 
 

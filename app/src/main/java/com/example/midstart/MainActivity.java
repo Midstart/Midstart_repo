@@ -17,6 +17,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     ImageView cardNews;  //카드뉴스
     ImageView cesTest; //우울증검사
     ImageView KTest; //갱년기검사
+    ImageView diary; //일기
 
 
     @Override
@@ -90,8 +92,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                UserAccount value =  snapshot.child("UserAccount").child(uid).getValue(UserAccount.class);
-                name.setText(value.getName()+" 님 안녕하세요!\n오늘도 즐거운 하루를 시작해봐요.");
+                try {
+                    UserAccount value = snapshot.child("UserAccount").child(uid).getValue(UserAccount.class);
+                    name.setText(value.getName() + " 님 안녕하세요!\n오늘도 즐거운 하루를 시작해봐요.");
+                }catch(Exception e){
+                    Log.v("testerr",e.getMessage());
+                }
+
+
 
 
             }
@@ -151,6 +159,18 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 startActivity(intent);
             }
         });
+
+        //일기로 이동
+        //cardView11
+        diary= (ImageView) findViewById(R.id.thumbnail5);
+        diary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), DiaryActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
 
