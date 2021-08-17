@@ -291,6 +291,7 @@
                         android:layout_height="200dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/thumbnail02"
+                        android:paddingBottom="20dp"
                         tools:ignore="MissingConstraints"></ImageView>
 
                 </androidx.cardview.widget.CardView>
@@ -316,7 +317,7 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/thumbnail04"
                         android:layout_marginBottom="60dp"
-
+                        android:paddingBottom="30dp"
                         tools:ignore="MissingConstraints"></ImageView>
 
                 </androidx.cardview.widget.CardView>
