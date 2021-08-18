@@ -2,6 +2,7 @@ package com.example.midstart;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,12 +24,15 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class DiaryActivity extends AppCompatActivity {
 
     Button input_btn; //일기쓰고 누르는 버튼
-    Button cal_btn; //달력으로 이동
+    ImageView cal_btn; //달력으로 이동
     Button inputAgain;//일기는 하루에 한번씩만 작성 가능. 오늘 일기 지우고 새로쓰는 버튼
+    TextView date; // 오늘 날짜
+    TextView hinttxt;
     private String uid;
     private DatabaseReference mDatabaseRef;  //실시간 데이터베이스
     private FirebaseUser user;
@@ -37,8 +42,9 @@ public class DiaryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_diary);
 
         input_btn=(Button)findViewById(R.id.diaryBtn);
-        cal_btn=(Button)findViewById(R.id.calendar_btn);
+        cal_btn=(ImageView)findViewById(R.id.calendar_btn);
         inputAgain=(Button)findViewById(R.id.removediaryBtn);
+        hinttxt = (TextView)findViewById(R.id.hinttxt);
 
         mDatabaseRef= FirebaseDatabase.getInstance().getReference("appname");
         user = FirebaseAuth.getInstance().getCurrentUser(); // 로그인한 유저의 정보 가져오기
@@ -59,8 +65,11 @@ public class DiaryActivity extends AppCompatActivity {
                     addDiary(diaryContent);
                 }
 
-                input_btn.setText("오늘 일기를 이미 쓰셨습니다.");
-                inputAgain.setText("오늘일기 삭제하고 새로쓰기.");
+                input_btn.setText("오늘의 일기 저장하기");
+                inputAgain.setText("오늘 일기 삭제하고 다시 쓰기.");
+                hinttxt.setVisibility(View.VISIBLE);
+                input_btn.setBackgroundResource(R.drawable.button_design_2);
+                inputAgain.setBackgroundResource(R.drawable.button_design);
                 input_btn.setEnabled(false);
                 inputAgain.setEnabled(true);
 
@@ -71,8 +80,11 @@ public class DiaryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 deleteDiary();
-                input_btn.setText("일기 작성하기");
-                inputAgain.setText("삭제할 오늘의 일기가 없습니다.");
+                input_btn.setText("오늘의 일기 저장하기");
+                inputAgain.setText("오늘 일기 삭제하고 다시 쓰기.");
+                hinttxt.setVisibility(View.GONE);
+                input_btn.setBackgroundResource(R.drawable.button_design);
+                inputAgain.setBackgroundResource(R.drawable.button_design_2);
                 inputAgain.setEnabled(false);
                 input_btn.setEnabled(true);
 
@@ -93,6 +105,10 @@ public class DiaryActivity extends AppCompatActivity {
         });
 
 
+        String currentDate = new SimpleDateFormat("yyyy.MM.dd", Locale.getDefault()).format(new Date());
+        date = (TextView) findViewById(R.id.date);
+        date.setText(currentDate);
+
 
 
     }
@@ -109,7 +125,6 @@ public class DiaryActivity extends AppCompatActivity {
         final boolean[] check = new boolean[1];
 
 
-
         mDatabaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -117,13 +132,19 @@ public class DiaryActivity extends AppCompatActivity {
 
                 UserAccount name =  snapshot.child("UserAccount").child(uid).getValue(UserAccount.class);
                 if(name.checkdiaryDate(getTime)){
-                    input_btn.setText("일기 작성하기");
-                    inputAgain.setText("삭제할 오늘의 일기가 없습니다.");
+                    input_btn.setText("오늘의 일기 저장하기");
+                    inputAgain.setText("오늘 일기 삭제하고 다시 쓰기.");
+                    hinttxt.setVisibility(View.GONE);
+                    input_btn.setBackgroundResource(R.drawable.button_design);
+                    inputAgain.setBackgroundResource(R.drawable.button_design_2);
                     inputAgain.setEnabled(false);
                 }
                 else {
-                    input_btn.setText("오늘 일기를 이미 쓰셨습니다.");
-                    inputAgain.setText("오늘일기 삭제하고 새로쓰기.");
+                    input_btn.setText("오늘의 일기 저장하기");
+                    inputAgain.setText("오늘 일기 삭제하고 다시 쓰기.");
+                    hinttxt.setVisibility(View.VISIBLE);
+                    input_btn.setBackgroundResource(R.drawable.button_design_2);
+                    inputAgain.setBackgroundResource(R.drawable.button_design);
                     input_btn.setEnabled(false);
 
                 }
@@ -136,8 +157,8 @@ public class DiaryActivity extends AppCompatActivity {
 
             }
         });
-       // if(check[0]) Toast.makeText(getApplicationContext(),"트루-중복아님",Toast.LENGTH_SHORT).show();
-       // else Toast.makeText(getApplicationContext(),"false-중복임",Toast.LENGTH_SHORT).show();
+        // if(check[0]) Toast.makeText(getApplicationContext(),"트루-중복아님",Toast.LENGTH_SHORT).show();
+        // else Toast.makeText(getApplicationContext(),"false-중복임",Toast.LENGTH_SHORT).show();
 
         return check[0];
     }

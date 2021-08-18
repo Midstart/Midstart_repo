@@ -1,52 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     tools:context=".DiaryActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:elevation="10dp"
+        android:background="#F0E3FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cafe24oneprettynight"
+            android:gravity="center"
+            android:text="0000.00.00"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/calendar_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_calendar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/question_today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cafe24oneprettynight"
+        android:textColor="@color/black"
+        android:layout_marginVertical="50dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:text="Q. 스스로에게 주고 싶은 선물이 있나요?"
+        android:layout_below="@+id/layoutTop" />
 
     <EditText
         android:id="@+id/diaryInput"
-        android:layout_width="270dp"
-        android:layout_height="60dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:fontFamily="@font/cafe24oneprettynight"
-        android:hint="일기를 입력하세요"
-        android:inputType="textEmailAddress"
-        android:layout_marginTop="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:hint="질문에 대한 답변을 적어보세요"
+        android:minLines="10"
+        android:scrollbars="vertical"
+        android:gravity="center"
+        android:background="#D0FAF5ED"
+        android:inputType="textEmailAddress|textMultiLine"
+        android:layout_centerHorizontal="true"
 
-    <Button
-        android:id="@+id/diaryBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/diaryInput" />
+        android:layout_below="@+id/question_today"/>
 
-    <Button
-        android:id="@+id/removediaryBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/diaryBtn" />
-
-    <Button
-        android:id="@+id/calendar_btn"
+    <TextView
+        android:id="@+id/hinttxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="달력 화면으로 가기"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_above="@+id/diaryBtn"
+        android:fontFamily="@font/cafe24oneprettynight"
+        android:text="오늘의 일기를 이미 작성하셨습니다."
+        android:textColor="#B30000"
+        android:textSize="12dp"
+        android:layout_centerHorizontal="true"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:fontFamily="@font/cafe24oneprettynight"
+        android:id="@+id/diaryBtn"
+        android:background="@drawable/button_design"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Button"
+        android:layout_above="@+id/removediaryBtn" />
+
+    <Button
+        android:fontFamily="@font/cafe24oneprettynight"
+        android:id="@+id/removediaryBtn"
+        android:background="@drawable/button_design_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="30dp"
+        android:text="Button"
+        android:layout_alignParentBottom="true" />
+
+
+</RelativeLayout>
