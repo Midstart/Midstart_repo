@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SimpleItemAnimator;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -46,6 +47,7 @@ public class calendarActivity extends AppCompatActivity implements CalendarAdapt
     Button btn_calendar;
     View calCell;
 
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +58,7 @@ public class calendarActivity extends AppCompatActivity implements CalendarAdapt
         mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("appname");
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); // 로그인한 유저의 정보 가져오기
-        String uid = user != null ? user.getUid() : null; // 로그인한 유저의 고유 uid 가져오기
+        uid = user != null ? user.getUid() : null; // 로그인한 유저의 고유 uid 가져오기
 
 /*
         text=findViewById(R.id.test);
@@ -165,20 +167,52 @@ public class calendarActivity extends AppCompatActivity implements CalendarAdapt
         CalendarUtils.selectedDate = CalendarUtils.selectedDate.plusMonths(1);
         setMonthView();
     }
-
+    LocalDate tempDate;
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onItemClick(int position, LocalDate date) {
         if (date != null) {
+
             CalendarUtils.selectedDate = date; //yyyy-MM-dd 형식
             CalendarUtils.firstLoad = false;
-            /*
-            String testdate = "2021-07-10";
 
-            if (testdate.equals(date.toString())) {
-                Toast.makeText(getApplicationContext(), "기록 정보는 다이얼로그나 액티비티로(토스트는 임시)", Toast.LENGTH_SHORT).show();
+            //더블클릭한경우
+            if(tempDate!=null){
+                if(tempDate.equals(date)){
+                    //Toast.makeText(getApplicationContext(),"더블클릭",Toast.LENGTH_SHORT).show();
+
+                        mDatabaseRef.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                UserAccount value = snapshot.child("UserAccount").child(uid).getValue(UserAccount.class);
+                                for(int i=0;i<value.getDiaryNum();i++){
+                                    diary d=value.getcertainDiary(i);
+                                    String dDate=d.getDate().substring(0,10);
+
+
+                                    if(dDate.equals(date.toString())){
+                                        String s=d.getDate()+"\n"+"질문내용\n"+d.getDiary();
+                                        mOnPopupClick(s);
+
+
+                                    }
+                                }
+
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+
+
+
+                }
             }
-  */
+            tempDate=CalendarUtils.selectedDate;
+
             //이걸 쓰면 기록한 날은 갱신 x 클릭한 날짜 테두리만 갱신할 수 있다. (깜빡임 해결!!)
             calendarAdapter.notifyDataSetChanged();
 
@@ -186,6 +220,19 @@ public class calendarActivity extends AppCompatActivity implements CalendarAdapt
 
         }
     }
+
+    //팝업 띄우는 함수
+    public void mOnPopupClick(String s){
+        //데이터 담아서 팝업(액티비티) 호출
+        Intent intent = new Intent(this, PopupActivity.class);
+        intent.putExtra("data",s);
+        startActivityForResult(intent, 1);
+    }
+
+
+
+
+
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
