@@ -32,7 +32,12 @@ public class DiaryActivity extends AppCompatActivity {
     ImageView cal_btn; //달력으로 이동
     Button inputAgain;//일기는 하루에 한번씩만 작성 가능. 오늘 일기 지우고 새로쓰는 버튼
     TextView date; // 오늘 날짜
+
+    TextView question;// 질문
     TextView hinttxt;
+
+    TextView level; //일기레벨
+    TextView diaryNum; //일기갯수
     private String uid;
     private DatabaseReference mDatabaseRef;  //실시간 데이터베이스
     private FirebaseUser user;
@@ -45,6 +50,9 @@ public class DiaryActivity extends AppCompatActivity {
         cal_btn=(ImageView)findViewById(R.id.calendar_btn);
         inputAgain=(Button)findViewById(R.id.removediaryBtn);
         hinttxt = (TextView)findViewById(R.id.hinttxt);
+
+        level=findViewById(R.id.diaryLevel);
+        diaryNum=findViewById(R.id.diaryNum);
 
         mDatabaseRef= FirebaseDatabase.getInstance().getReference("appname");
         user = FirebaseAuth.getInstance().getCurrentUser(); // 로그인한 유저의 정보 가져오기
@@ -59,7 +67,7 @@ public class DiaryActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String diaryContent = mEtdiary.getText().toString();
                 if(diaryContent.equals(null) || diaryContent.equals("")) {
-                    addDiary("일기 내용이 없삼..");
+                    addDiary("질문에 답변을 하지 않았습니다.");
                 }
                 else{
                     addDiary(diaryContent);
@@ -103,11 +111,35 @@ public class DiaryActivity extends AppCompatActivity {
                 }
             }
         });
+        //질문 리스트 16개
+        String [] quesList={
+                "Q. 오늘 하루중 기억에 남기고 싶은 것은?",
+                "Q. 죽기 전에 꼭 하고 싶은 일이 있다면?",
+                "Q. 나에게 주고 싶은 선물이 있다면?",
+                "Q. 나의 신조는 무엇인가?",
+                "Q.닮고 싶은 문학작품 속 주인공은?.",
+                "Q. _____은 재미있다.",
+                "Q. 여름이 좋은가, 겨울이 좋은가?",
+                "Q. 내 묘비에 남기고 싶은 말은?",
+                "Q. 현실에 안주하고 싶은가, 흥분되는 도전을 원하는가?",
+                "Q. 자신의 몸에 대해 어떻게 생각하는가?",
+                "Q. 내가 한 거짓말 중에 가장 큰 파장을 불러일으켰던 것은?",
+                "Q. 최근에 기분 좋은 대화를 나눈 사람의 이름을 적어보자.",
+                "Q. 지금 사랑하고 있는가?",
+                "Q. 오늘 있었던 일 중에서 지우고 싶은 기억이 있다면?",
+                "Q. 집이란 무엇이라고 생각하는가?",
+                "Q. 오늘 하루 슬퍼할 일이 있었는가?",
 
+        };
 
         String currentDate = new SimpleDateFormat("yyyy.MM.dd", Locale.getDefault()).format(new Date());
         date = (TextView) findViewById(R.id.date);
         date.setText(currentDate);
+        int tempDate=Integer.parseInt(currentDate.substring(8,10))%16;
+        question = (TextView) findViewById(R.id.question_today);
+        question.setText(quesList[tempDate]);
+
+
 
 
 
@@ -147,6 +179,21 @@ public class DiaryActivity extends AppCompatActivity {
                     inputAgain.setBackgroundResource(R.drawable.button_design);
                     input_btn.setEnabled(false);
 
+                }
+                int num=name.getDiaryNum()-1;
+                String n= String.valueOf(num);
+                diaryNum.setText("지금까지 "+n+"개의 일기를 작성했습니다." );
+                if(num==0){
+                    level.setText("00");
+                }
+                else if(num==1){
+                    level.setText("01");
+                }
+                else if(num==2){
+                    level.setText("02");
+                }
+                else{
+                    level.setText("03");
                 }
 
 
