@@ -98,7 +98,7 @@ public class UserAccount {
        return s;
     }
 
-    //일기 개수+1을 리턴(회원가입 시 생기는 첫번째 일기가 포함돼서 한개 더 많음)
+    //일기 개수+1을 리턴(회원가입 시 생기는 첫번째 일기가 포함돼서 한 개 더 많음)
     public int getDiaryNum(){
         return diaryList.size();
     }
@@ -107,6 +107,7 @@ public class UserAccount {
     public diary getcertainDiary(int index){
         return diaryList.get(index);
     }
+
 
 
 }
