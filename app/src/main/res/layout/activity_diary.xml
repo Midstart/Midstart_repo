@@ -45,7 +45,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_margin="16dp"
-            android:src="@drawable/ic_calendar"
+            android:src="@drawable/ic_cal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -62,7 +62,6 @@
         android:textSize="20dp"
         android:text="Q. 스스로에게 주고 싶은 선물이 있나요?"
         android:layout_below="@+id/layoutTop" />
-
 
     <EditText
         android:id="@+id/diaryInput"

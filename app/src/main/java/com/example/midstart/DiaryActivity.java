@@ -125,7 +125,6 @@ public class DiaryActivity extends AppCompatActivity {
         final boolean[] check = new boolean[1];
 
 
-
         mDatabaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
