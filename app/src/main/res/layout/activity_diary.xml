@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/cafe24oneprettynight"
         android:textColor="@color/black"
-        android:layout_marginVertical="50dp"
+        android:layout_marginVertical="40dp"
         android:layout_centerHorizontal="true"
         android:textSize="20dp"
         android:text="Q. 스스로에게 주고 싶은 선물이 있나요?"
@@ -83,34 +83,102 @@
         android:id="@+id/hinttxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/diaryBtn"
+        android:layout_below="@+id/diaryInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/cafe24oneprettynight"
         android:text="오늘의 일기를 이미 작성하셨습니다."
         android:textColor="#B30000"
-        android:textSize="12dp"
-        android:layout_centerHorizontal="true"
+        android:textSize="12dp" />
+
+    <Button
+        android:id="@+id/diaryBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/hinttxt"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_design"
+        android:fontFamily="@font/cafe24oneprettynight"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/removediaryBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/diaryBtn"
+        android:layout_marginHorizontal="10dp"
+
+        android:background="@drawable/button_design_2"
+        android:fontFamily="@font/cafe24oneprettynight"
+        android:text="Button" />
+
+
+
+    <TextView
+
+        android:layout_below="@+id/removediaryBtn"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/diaryLevel"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:fontFamily="@font/cafe24oneprettynight"
+        android:gravity="center"
+        android:textColor="#AD8EDB"
+        android:text="01"
+        android:textSize="60dp"
+
+        android:background="@drawable/text_design"
         />
 
-    <Button
-        android:fontFamily="@font/cafe24oneprettynight"
-        android:id="@+id/diaryBtn"
-        android:background="@drawable/button_design"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Button"
-        android:layout_above="@+id/removediaryBtn" />
+        android:layout_below="@+id/diaryLevel"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
+        android:textColor="#AD8EDB"
+        android:fontFamily="@font/cafe24oneprettynight"
+        android:text="일기레벨" />
 
-    <Button
-        android:fontFamily="@font/cafe24oneprettynight"
-        android:id="@+id/removediaryBtn"
-        android:background="@drawable/button_design_2"
-        android:layout_width="match_parent"
+
+    <TextView
+        android:id="@+id/diaryNum"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginBottom="30dp"
-        android:text="Button"
-        android:layout_alignParentBottom="true" />
+        android:layout_below="@+id/removediaryBtn"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:textSize="17dp"
+        android:fontFamily="@font/cafe24oneprettynight"
+        android:textColor="@color/black"
+        android:layout_toEndOf="@+id/diaryLevel"
+        android:layout_toRightOf="@+id/diaryLevel"
+        android:text="지금까지 1개의 일기를 작성하셨습니다." />
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/diaryNum"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/cafe24oneprettynight"
+
+        android:layout_toEndOf="@+id/diaryLevel"
+        android:layout_toRightOf="@+id/diaryLevel"
+        android:text="감정일기는 내 삶을 점검하는 도구로써 \n긍정적인 마음을 강화해 우울증의 늪에\n빠지지 않도록 도와줍니다.\n꾸준히 일기를 써서 일기 레벨을 올려보세요!" />
+
+
+
+
+
 
 
 </RelativeLayout>

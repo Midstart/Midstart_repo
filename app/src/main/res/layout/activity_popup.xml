@@ -14,6 +14,7 @@
             android:text="이날의 일기"
             android:textSize="20sp"
             android:textColor="#fff"
+            android:fontFamily="@font/cafe24oneprettynight"
             android:gravity="center"
             android:background="#AD8EDB"
             android:layout_width="match_parent"
@@ -28,9 +29,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:id="@+id/txtText"
+            android:id="@+id/txtText1"
             android:textSize="15sp"
             android:textColor="#000"
+            android:fontFamily="@font/cafe24oneprettynight"
+            android:alpha="0.87"
+            android:gravity="center"
+            android:layout_marginBottom="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/txtText2"
+            android:textSize="15sp"
+            android:textColor="#000"
+            android:fontFamily="@font/cafe24oneprettynight"
+            android:alpha="0.87"
+            android:gravity="center"
+            android:layout_marginBottom="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/txtText3"
+            android:textSize="15sp"
+            android:textColor="#000"
+            android:fontFamily="@font/cafe24oneprettynight"
             android:alpha="0.87"
             android:gravity="center"
             android:layout_marginBottom="3dp"
@@ -55,6 +77,7 @@
             android:textSize="15sp"
             android:textColor="#AD8EDB"
             android:padding="16dp"
+            android:fontFamily="@font/cafe24oneprettynight"
             android:gravity="center"
             android:background="#00000000"
             android:layout_width="match_parent"

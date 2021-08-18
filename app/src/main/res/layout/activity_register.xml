@@ -28,7 +28,7 @@
         android:fontFamily="@font/cafe24oneprettynight"
         android:ems="10"
         android:hint="이름을 입력하세요"
-
+        android:textColor="@color/black"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +51,7 @@
         android:id="@+id/et_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:textColor="@color/black"
         android:ems="10"
         android:hint="이메일을 입력하세요"
         android:inputType="textEmailAddress"
@@ -78,9 +78,8 @@
         android:id="@+id/et_pwd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:ems="10"
-
+        android:textColor="@color/black"
         android:inputType="textPassword"
         android:hint="비밀번호를 입력하세요"
         android:fontFamily="@font/cafe24oneprettynight"
