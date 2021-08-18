@@ -16,7 +16,8 @@
         android:usesCleartextTraffic="true"
         tools:targetAPI="m">
         <activity android:name=".calendarActivity"></activity>
-        <activity android:name=".DiaryActivity" />
+        <activity android:name=".DiaryActivity"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".KresActivity" />
         <activity android:name=".KuppermanActivity" />
         <activity android:name=".ChatBotActivity" />
