@@ -36,6 +36,8 @@ public class DiaryActivity extends AppCompatActivity {
     TextView question;// 질문
     TextView hinttxt;
 
+    ImageView diaryBack_btn; //뒤로가기 버튼
+
     TextView level; //일기레벨
     TextView diaryNum; //일기갯수
     private String uid;
@@ -61,6 +63,19 @@ public class DiaryActivity extends AppCompatActivity {
 
         checkTodoDiary();
 
+
+        diaryBack_btn  = (ImageView) findViewById(R.id.imageView2);
+        diaryBack_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                }catch(Exception e){
+                    Log.v("testerr",e.getMessage());
+                }
+            }
+        });
         EditText mEtdiary=findViewById(R.id.diaryInput);
         input_btn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +47,8 @@ public class calendarActivity extends AppCompatActivity implements CalendarAdapt
     RecyclerView calendarRecyclerView;
     Button btn_calendar;
     View calCell;
+    ImageView calBack_btn;
+
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -98,6 +101,20 @@ public class calendarActivity extends AppCompatActivity implements CalendarAdapt
         prev_btn.setOnClickListener(this);
         Button next_btn = findViewById(R.id.nextmonth_btn);
         next_btn.setOnClickListener(this);
+        calBack_btn  = (ImageView) findViewById(R.id.diaryBack);
+
+        calBack_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(getApplicationContext(), DiaryActivity.class);
+                    startActivity(intent);
+                }catch(Exception e){
+                    Log.v("testerr",e.getMessage());
+                }
+            }
+        });
+
 
 
     }

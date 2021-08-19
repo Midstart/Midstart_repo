@@ -2,7 +2,11 @@ package com.example.midstart;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
@@ -14,6 +18,7 @@ import java.util.List;
 public class CardNews2 extends AppCompatActivity {
 
     SliderView sliderView;
+    ImageView back_btn;
     int[] images = {R.drawable.news3_1,
             R.drawable.news3_2,
             R.drawable.news3_3,
@@ -32,5 +37,18 @@ public class CardNews2 extends AppCompatActivity {
         sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
         sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
         sliderView.startAutoCycle();
+
+        back_btn  = (ImageView) findViewById(R.id.imageView2);
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(getApplicationContext(), CardNewsActivity.class);
+                    startActivity(intent);
+                }catch(Exception e){
+                    Log.v("testerr",e.getMessage());
+                }
+            }
+        });
     }
 }
