@@ -231,6 +231,19 @@ public class calendarActivity extends AppCompatActivity implements CalendarAdapt
         intent.putExtra("data",s);
         startActivityForResult(intent, 1);
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                //데이터 받기
+                String result = data.getStringExtra("result");
+                //txtResult.setText(result);
+            }
+        }
+    }
+
+
 
 
 
