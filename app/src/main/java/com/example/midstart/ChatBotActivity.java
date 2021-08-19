@@ -60,8 +60,8 @@ public class ChatBotActivity extends AppCompatActivity {
 
     private void getResponse(String msg){
         chatsModalArrayList.add(new ChatsModal(msg, USER_KEY));
-        String url="http://8876039a7321.ngrok.io/?msg="+msg;
-        String BASE_URL="http://8876039a7321.ngrok.io/";
+        String url=" http://18607213ec4f.ngrok.io/?msg="+msg;
+        String BASE_URL=" http://18607213ec4f.ngrok.io/";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
