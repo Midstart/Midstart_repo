@@ -72,7 +72,7 @@ public class PopupActivity extends Activity {
         //액티비티(팝업) 닫기
         finish();
 
-        onStop();
+        //onStop();
     }
 
     @Override
