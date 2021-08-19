@@ -30,7 +30,7 @@
         android:fontFamily="@font/cafe24oneprettynight"
         android:ems="10"
         android:textColor="@color/black"
-
+        app:passwordToggleTint="@color/black"
         android:inputType="textPassword"
         android:hint="비밀번호를 입력하세요"
 
