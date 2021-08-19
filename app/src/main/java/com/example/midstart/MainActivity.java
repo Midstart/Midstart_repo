@@ -53,13 +53,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private TextView stepSinceReboot;   // 걸음수
     int stepNow;
 
-    // 날씨, 위치 관련
+
+    // 날씨, 위치
     final String APP_ID = "ac5471e3caa6df5bb40fbe111f57c735";
     final String WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather";
     final long MIN_TIME = 5000; // 5sec
     final float MIN_DISTANCE = 1000;
     final int REQUEST_CODE = 101;
-
 
     TextView weatherState, Temperature;
     ImageView mweatherIcon;
@@ -176,6 +176,19 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), DiaryActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        //로그아웃 누르면 로그인화면으로
+        Button logout = (Button) findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mFirebaseAuth.signOut();
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+
+
             }
         });
 

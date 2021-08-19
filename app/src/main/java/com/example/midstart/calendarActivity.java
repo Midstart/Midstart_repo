@@ -80,15 +80,18 @@ public class calendarActivity extends AppCompatActivity implements CalendarAdapt
             }
         });
 
+
+
+ */
+        btn=findViewById(R.id.cal_home);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
 
- */
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
         calCell = findViewById(R.id.parentView);
         monthYearText = findViewById(R.id.monthYearTV);
