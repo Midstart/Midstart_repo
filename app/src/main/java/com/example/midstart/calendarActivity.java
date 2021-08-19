@@ -104,7 +104,7 @@ public class calendarActivity extends AppCompatActivity implements CalendarAdapt
         prev_btn.setOnClickListener(this);
         Button next_btn = findViewById(R.id.nextmonth_btn);
         next_btn.setOnClickListener(this);
-        calBack_btn  = (ImageView) findViewById(R.id.diaryBack);
+        calBack_btn  = (ImageView) findViewById(R.id.imageView2);
 
         calBack_btn.setOnClickListener(new View.OnClickListener() {
             @Override

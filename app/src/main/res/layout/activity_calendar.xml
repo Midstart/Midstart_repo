@@ -6,137 +6,174 @@
     android:layout_height="match_parent"
     tools:context=".calendarActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:elevation="10dp"
+        android:background="#F0E3FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".MainActivity">
 
-    <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="60dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/previousmonth_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:backgroundTint="@color/white"
+                android:text="←"
+
+                android:textColor="#8041D9"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/monthYearTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:fontFamily="@font/cafe24oneprettynight"
+                android:gravity="center_horizontal"
+                android:text="Feb 2021"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/nextmonth_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:backgroundTint="@color/white"
+                android:text="→"
+                android:textColor="#8041D9"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cafe24oneprettynight"
+                android:gravity="center_horizontal"
+                android:text="SUN"
+                android:textAlignment="center"
+                android:textColor="#747474"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cafe24oneprettynight"
+                android:text="MON"
+                android:textColor="#747474"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cafe24oneprettynight"
+                android:text="TUE"
+                android:textColor="#747474"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cafe24oneprettynight"
+                android:text="WED"
+                android:textColor="#747474"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cafe24oneprettynight"
+                android:text="THUR"
+                android:textColor="#747474"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cafe24oneprettynight"
+                android:text="FRI"
+                android:textColor="#747474"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cafe24oneprettynight"
+                android:text="SAT"
+                android:textColor="#747474"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/calendarRecyclerView"
+            android:layout_marginBottom="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <Button
         android:layout_width="match_parent"
+        android:id="@+id/cal_home"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:background="@drawable/button_design"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:layout_marginBottom="20dp"
-        >
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="←"
-            android:textColor="#8041D9"
-            android:background="@null"
-            android:textStyle="bold"
-
-            android:id="@+id/previousmonth_btn"
-            android:backgroundTint="@color/white"
-            android:textSize="20sp"/>
-
-        <TextView
-            android:id="@+id/monthYearTV"
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="wrap_content"
-            android:text="Feb 2021"
-            android:fontFamily="@font/cafe24oneprettynight"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:gravity="center_horizontal" />
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="→"
-            android:textColor="#8041D9"
-            android:background="@null"
-            android:textStyle="bold"
-            android:id="@+id/nextmonth_btn"
-            android:backgroundTint="@color/white"
-            android:textSize="20sp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="SUN"
-            android:fontFamily="@font/cafe24oneprettynight"
-            android:textColor="#747474"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            android:gravity="center_horizontal" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="MON"
-            android:textColor="#747474"
-            android:fontFamily="@font/cafe24oneprettynight"
-            android:textSize="16sp"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TUE"
-            android:textColor="#747474"
-            android:fontFamily="@font/cafe24oneprettynight"
-            android:textSize="16sp"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="WED"
-            android:textColor="#747474"
-            android:fontFamily="@font/cafe24oneprettynight"
-            android:textSize="16sp"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="THUR"
-            android:textColor="#747474"
-            android:fontFamily="@font/cafe24oneprettynight"
-            android:textSize="16sp"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="FRI"
-            android:textColor="#747474"
-            android:fontFamily="@font/cafe24oneprettynight"
-            android:textSize="16sp"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="SAT"
-            android:textColor="#747474"
-            android:fontFamily="@font/cafe24oneprettynight"
-            android:textSize="16sp"/>
-
-
-    </LinearLayout>
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/calendarRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-    </LinearLayout>
+        android:text="홈으로"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
