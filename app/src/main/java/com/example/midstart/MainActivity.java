@@ -179,6 +179,19 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             }
         });
 
+        //로그아웃 누르면 로그인화면으로
+        Button logout = (Button) findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mFirebaseAuth.signOut();
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+
+
+            }
+        });
+
 
 
     }
