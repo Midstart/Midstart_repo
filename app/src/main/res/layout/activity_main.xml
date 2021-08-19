@@ -88,6 +88,7 @@
         android:elevation="12dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
@@ -347,6 +348,25 @@
                         tools:ignore="MissingConstraints"></ImageView>
 
                 </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:id="@+id/logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/button_design_2"
+                    android:text="로그아웃"
+                    android:textColor="#AD8EDB"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView11" />
+
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
