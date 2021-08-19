@@ -60,11 +60,8 @@ public class ChatBotActivity extends AppCompatActivity {
 
     private void getResponse(String msg){
         chatsModalArrayList.add(new ChatsModal(msg, USER_KEY));
-
         String url="http://urlurlurlurl/?msg="+msg;
-
         String BASE_URL="http://urlurlurlurl/";
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -73,11 +70,9 @@ public class ChatBotActivity extends AppCompatActivity {
         RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
 
         Call<MsgModal> call = retrofitAPI.getMessage(url);
-        Log.v("checkcall", String.valueOf(retrofitAPI.getMessage(url)));
         call.enqueue(new Callback<MsgModal>() {
             @Override
             public void onResponse(Call<MsgModal> call, Response<MsgModal> response) {
-
                 if(response.isSuccessful()){
                     MsgModal modal = response.body();
                     chatsModalArrayList.add(new ChatsModal(modal.getAnswer(),BOT_KEY));

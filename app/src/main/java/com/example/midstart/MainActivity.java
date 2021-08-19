@@ -53,13 +53,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private TextView stepSinceReboot;   // 걸음수
     int stepNow;
 
-    // 날씨, 위치 관련
+
+    // 날씨, 위치
     final String APP_ID = "ac5471e3caa6df5bb40fbe111f57c735";
     final String WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather";
     final long MIN_TIME = 5000; // 5sec
     final float MIN_DISTANCE = 1000;
     final int REQUEST_CODE = 101;
-
 
     TextView weatherState, Temperature;
     ImageView mweatherIcon;
