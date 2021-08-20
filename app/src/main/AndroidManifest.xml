@@ -16,8 +16,9 @@
         android:theme="@style/Theme.Midstart"
         android:usesCleartextTraffic="true"
         tools:targetAPI="m">
-        <activity android:name=".PopupActivity" android:theme="@android:style/Theme.Dialog"></activity>
+
         <activity android:name=".calendarActivity" />
+        <activity android:name=".PopupActivity" android:theme="@android:style/Theme.Dialog"></activity>
         <activity android:name=".DiaryActivity" android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".KresActivity" />
         <activity android:name=".KuppermanActivity" />

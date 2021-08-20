@@ -78,7 +78,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mFirebaseAuth= FirebaseAuth.getInstance();
+
+
         mDatabaseRef= FirebaseDatabase.getInstance().getReference("appname");
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); // 로그인한 유저의 정보 가져오기
         String uid = user != null ? user.getUid() : null; // 로그인한 유저의 고유 uid 가져오기
@@ -178,15 +179,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 startActivity(intent);
             }
         });
-
+        mFirebaseAuth= FirebaseAuth.getInstance();
         //로그아웃 누르면 로그인화면으로
         Button logout = (Button) findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mFirebaseAuth.signOut();
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
+                finish();
 
 
             }

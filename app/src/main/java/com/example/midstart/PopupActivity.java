@@ -3,12 +3,18 @@ package com.example.midstart;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
+
+import java.util.List;
 
 public class PopupActivity extends Activity {
 
@@ -16,10 +22,17 @@ public class PopupActivity extends Activity {
     TextView txtText2;
     TextView txtText3;
 
-
+    public static Activity popActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        String currentActivityName = getClass().getSimpleName().trim();
+        Log.v("testerr",currentActivityName);
+
+
+
 
         //질문 리스트 16개
         String [] quesList={
@@ -49,10 +62,14 @@ public class PopupActivity extends Activity {
         txtText1 = (TextView)findViewById(R.id.txtText1);
         txtText2 = (TextView)findViewById(R.id.txtText2);
         txtText3 = (TextView)findViewById(R.id.txtText3);
-
-        //데이터 가져오기
-        Intent intent = getIntent();
-
+        Intent intent;
+        try {
+            //데이터 가져오기
+            intent = getIntent();
+        }catch(Exception e){
+            intent = getIntent();
+            finish();
+        }
         String Tempdata = intent.getStringExtra("data");
         String data []=Tempdata.split("\n");
         txtText1.setText(data[0].substring(0,10));
@@ -71,8 +88,8 @@ public class PopupActivity extends Activity {
 
         //액티비티(팝업) 닫기
         finish();
+       // this.onStop();
 
-        //onStop();
     }
 
     @Override
@@ -89,5 +106,6 @@ public class PopupActivity extends Activity {
         //안드로이드 백버튼 막기
         return;
     }
+
 }
 
