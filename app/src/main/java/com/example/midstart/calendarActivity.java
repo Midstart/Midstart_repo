@@ -227,8 +227,10 @@ public class calendarActivity extends AppCompatActivity implements CalendarAdapt
     //팝업 띄우는 함수
     public void mOnPopupClick(String s){
         //데이터 담아서 팝업(액티비티) 호출
+
         Intent intent = new Intent(this, PopupActivity.class);
         intent.putExtra("data",s);
+        //startActivity(intent);
         startActivityForResult(intent, 1);
     }
     @Override
